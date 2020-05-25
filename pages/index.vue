@@ -1,7 +1,7 @@
 <template>
   <v-layout column justify-center align-center>
     <template v-if="authenticated">
-      <v-btn color="error" v-on:click="signOut">Sign Out</v-btn>
+      <v-btn color="error" @click="signOut">Sign Out</v-btn>
     </template>
     <amplify-authenticator></amplify-authenticator>
   </v-layout>
@@ -19,13 +19,13 @@ export default {
       } else {
         return false
       }
-    }
+    },
   },
   methods: {
     signOut() {
       this.$store.dispatch('signOut')
       window.location.reload()
-    }
-  }
+    },
+  },
 }
 </script>

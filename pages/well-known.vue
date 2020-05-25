@@ -17,22 +17,20 @@
 <script>
 import VueJsonPretty from 'vue-json-pretty'
 
-const JWKS_URI = `https://cognito-idp.${
-  process.env.AUTH_REGION
-}.amazonaws.com/${process.env.AUTH_USERPOOLID}/.well-known/jwks.json`
+const JWKS_URI = `https://cognito-idp.${process.env.AUTH_REGION}.amazonaws.com/${process.env.AUTH_USERPOOLID}/.well-known/jwks.json`
 
 export default {
+  components: {
+    VueJsonPretty,
+  },
   async asyncData(context) {
     const jwks = await context.$axios.get(JWKS_URI)
     return { jwks: jwks.data }
   },
-  components: {
-    VueJsonPretty
-  },
   computed: {
     jwksUri() {
       return JWKS_URI
-    }
+    },
     // decoded() {
     //   return jsonwebtoken.decode(this.jwt, { complete: true })
     // },
@@ -42,7 +40,7 @@ export default {
     // payload() {
     //   return this.decoded.payload
     // }
-  }
+  },
 }
 </script>
 

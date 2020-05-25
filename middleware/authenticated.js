@@ -12,11 +12,11 @@ Amplify.configure({
     identityPoolId: process.env.AUTH_IDENTITYPOOLID,
     region: process.env.AUTH_REGION,
     userPoolId: process.env.AUTH_USERPOOLID,
-    userPoolWebClientId: process.env.AUTH_USERPOOLWEBCLIENTID
-  }
+    userPoolWebClientId: process.env.AUTH_USERPOOLWEBCLIENTID,
+  },
 })
 
-AmplifyEventBus.$on('authState', authState => {
+AmplifyEventBus.$on('authState', (authState) => {
   console.log('authState: %s', authState)
 
   if (router != null) {
@@ -27,7 +27,7 @@ AmplifyEventBus.$on('authState', authState => {
   }
 })
 
-export default async context => {
+export default async (context) => {
   if (router == null) {
     router = context.app.router
   }
@@ -40,7 +40,7 @@ export default async context => {
 }
 
 const refreshUser = async () => {
-  const user = await Amplify.Auth.currentAuthenticatedUser().catch(e => {})
+  const user = await Amplify.Auth.currentAuthenticatedUser().catch((e) => {})
 
   if (store != null) {
     if (user !== null && user !== undefined) {

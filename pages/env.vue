@@ -19,22 +19,22 @@ export default {
       return [
         {
           name: 'Identity Pool Id',
-          value: process.env.AUTH_IDENTITYPOOLID
+          value: process.env.AUTH_IDENTITYPOOLID,
         },
         {
           name: 'Region',
-          value: process.env.AUTH_REGION
+          value: process.env.AUTH_REGION,
         },
         {
           name: 'User Pool Id',
-          value: process.env.AUTH_USERPOOLID
+          value: process.env.AUTH_USERPOOLID,
         },
         {
           name: 'User Pool Web Client Id',
-          value: process.env.AUTH_USERPOOLWEBCLIENTID
-        }
+          value: process.env.AUTH_USERPOOLWEBCLIENTID,
+        },
       ]
-    }
-  }
+    },
+  },
 }
 </script>

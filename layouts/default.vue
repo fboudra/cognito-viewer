@@ -29,7 +29,7 @@
           </v-list-tile-action>
           <v-list-tile-content>
             <v-list-tile-title>
-              <a v-on:click="dump">Console.log</a>
+              <a @click="dump">Console.log</a>
             </v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
@@ -63,29 +63,29 @@ export default {
         {
           icon: 'person',
           title: 'Authenticator',
-          to: '/'
+          to: '/',
         },
         {
           icon: 'vpn_key',
           title: 'Token',
-          to: '/token'
+          to: '/token',
         },
         {
           icon: 'vpn_key',
           title: 'JSON Web Key',
-          to: '/well-known'
+          to: '/well-known',
         },
         {
           icon: 'info',
           title: 'Environment',
-          to: '/env'
-        }
+          to: '/env',
+        },
       ],
       buttons: [],
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: 'Cognito Viewer'
+      title: 'Cognito Viewer',
     }
   },
   computed: {
@@ -96,7 +96,7 @@ export default {
       } else {
         return ''
       }
-    }
+    },
   },
   methods: {
     async dump() {
@@ -106,19 +106,19 @@ export default {
       const log = {}
 
       log.currentSession = await this.$Amplify.Auth.currentSession().catch(
-        e => (log.currentSession = e)
+        (e) => (log.currentSession = e)
       )
 
       log.currentUserInfo = await this.$Amplify.Auth.currentUserInfo().catch(
-        e => (log.currentUserInfo = e)
+        (e) => (log.currentUserInfo = e)
       )
 
       log.currentAuthenticatedUser = await this.$Amplify.Auth.currentAuthenticatedUser().catch(
-        e => (log.currentAuthenticatedUser = e)
+        (e) => (log.currentAuthenticatedUser = e)
       )
 
       return log
-    }
-  }
+    },
+  },
 }
 </script>

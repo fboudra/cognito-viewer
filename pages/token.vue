@@ -9,7 +9,7 @@ import TokenViewer from '@/components/TokenViewer'
 
 export default {
   components: {
-    TokenViewer
-  }
+    TokenViewer,
+  },
 }
 </script>

@@ -65,15 +65,12 @@ import JwtViewer from '@/components/JwtViewer'
 
 export default {
   components: {
-    JwtViewer
+    JwtViewer,
   },
   data() {
     return {
-      currentSession: null
+      currentSession: null,
     }
-  },
-  mounted() {
-    this.refresh()
   },
   computed: {
     idToken() {
@@ -88,13 +85,16 @@ export default {
     },
     clockDrift() {
       return this.currentSession ? this.currentSession.clockDrift : null
-    }
+    },
+  },
+  mounted() {
+    this.refresh()
   },
   methods: {
     async refresh() {
       this.currentSession = await Auth.currentSession()
-    }
-  }
+    },
+  },
 }
 </script>
 

@@ -6,7 +6,7 @@ const {
   AUTH_IDENTITYPOOLID,
   AUTH_REGION,
   AUTH_USERPOOLID,
-  AUTH_USERPOOLWEBCLIENTID
+  AUTH_USERPOOLWEBCLIENTID,
 } = process.env
 
 module.exports = {
@@ -23,17 +23,17 @@ module.exports = {
       {
         hid: 'description',
         name: 'description',
-        content: 'A playground for amazon cognito and amplify'
-      }
+        content: 'A playground for amazon cognito and amplify',
+      },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {
         rel: 'stylesheet',
         href:
-          'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons'
-      }
-    ]
+          'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons',
+      },
+    ],
   },
 
   /*
@@ -57,7 +57,7 @@ module.exports = {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
   ],
   /*
    ** Axios module configuration
@@ -74,8 +74,8 @@ module.exports = {
     plugins: [new VuetifyLoaderPlugin()],
     loaders: {
       stylus: {
-        import: ['~assets/style/variables.styl']
-      }
+        import: ['~assets/style/variables.styl'],
+      },
     },
     /*
      ** You can extend webpack config here
@@ -90,15 +90,15 @@ module.exports = {
       //     exclude: /(node_modules)/
       //   })
       // }
-    }
+    },
   },
   router: {
-    middleware: ['authenticated']
+    middleware: ['authenticated'],
   },
   env: {
     AUTH_IDENTITYPOOLID,
     AUTH_REGION,
     AUTH_USERPOOLID,
-    AUTH_USERPOOLWEBCLIENTID
-  }
+    AUTH_USERPOOLWEBCLIENTID,
+  },
 }

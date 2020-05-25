@@ -25,10 +25,10 @@ import VueJsonPretty from 'vue-json-pretty'
 import jsonwebtoken from 'jsonwebtoken'
 
 export default {
-  props: ['jwt'],
   components: {
-    VueJsonPretty
+    VueJsonPretty,
   },
+  props: ['jwt'],
   computed: {
     decoded() {
       return jsonwebtoken.decode(this.jwt, { complete: true })
@@ -38,8 +38,8 @@ export default {
     },
     payload() {
       return this.decoded.payload
-    }
-  }
+    },
+  },
 }
 </script>
 
